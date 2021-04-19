@@ -207,9 +207,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         elevation: 5.0,
           onPressed: () async {
             print('$_name, $_mobile,$_email, $_password');
-            dynamic user =
-            await auth.register(_name, _mobile, _email, _password);
-            if (user == null) {
+            if (null) {
               print('Error signing up');
             }
             else {
@@ -218,7 +216,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 MaterialPageRoute(builder: (context) => HomePage()),
               );
             }
-            Provider.of<Authentication>(context,listen: false).signUp(_email, _password);
+            // Provider.of<Authentication>(context,listen: false).signUp(_email, _password);
           },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(

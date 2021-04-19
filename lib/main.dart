@@ -1,7 +1,6 @@
-import 'package:my_money_app/register.dart';
+import 'package:my_money_app/homescreen.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:my_money_app/models/authentication.dart';
+import 'package:my_money_app/register.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,22 +9,14 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(
-            value: Authentication(),
-        )
-      ],
-      child: MaterialApp(
-        title: 'ParQuick Admin App',
+      return MaterialApp(
+        title: 'MyMoney-Bill Splitter',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         home: RegisterScreen(),
         debugShowCheckedModeBanner: false,
-      ),
-
-    );
+      );
   }
 }
 
