@@ -1,6 +1,7 @@
 import 'package:first_app/Screens/Welcome/components/palette.dart';
 import 'package:first_app/Screens/Welcome/load.dart';
 import 'package:first_app/views/home.dart';
+import 'package:first_app/views/splitbill.dart';
 import 'package:first_app/widgets/rounded_button.dart';
 import 'package:first_app/auth.dart';
 import 'package:flutter/material.dart';
@@ -35,12 +36,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
               MaterialPageRoute(builder: (context) => Home()),
             );
           }
+          if (_currentTab == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BillSplitHomePage()),
+            );
+          }
+
         },
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               backgroundColor: Colors.blue,
               title: Text('Home')
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.monetization_on_outlined),
+              backgroundColor: Colors.blue,
+              title: Text('Split Bill')
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.group_add),
@@ -53,6 +66,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               title: Text('Profile')
           ),
         ],
+
+
       ),
     );
   }
